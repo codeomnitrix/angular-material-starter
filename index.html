@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Quick Logix</title>
+        <link rel="stylesheet" href="dist/custom.css">
+        <link rel="stylesheet" href="dist/angular-material.min.css">        
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body>
+        <div ng-app="qlsearch" ng-controller="rootCtrl">
+            <div ng-include="'app/common/header/header.html'"></div>
+            <div layout="row" flex="100" style="height: 100vh;">
+                <div md-colors="{background: '{{theme.name}}-primary'}" class="sideNav" 
+                flex="{{config.leftNavFlex}}" style="overflow: hidden;" ng-include="'app/common/sidenav/sidenav.html'"></div>
+                <md-divider class="vertical-divider"></md-divider>
+                <div ui-view flex="">
+                    Content Area
+                </div>
+            </div>
+            <div ng-include="'app/common/footer.html'"></div>
+        </div>        
+        <div id="floatBarsG">
+            <div id="floatBarsG_1" class="floatBarsG"></div>
+            <div id="floatBarsG_2" class="floatBarsG"></div>
+            <div id="floatBarsG_3" class="floatBarsG"></div>
+            <div id="floatBarsG_4" class="floatBarsG"></div>
+            <div id="floatBarsG_5" class="floatBarsG"></div>
+            <div id="floatBarsG_6" class="floatBarsG"></div>
+            <div id="floatBarsG_7" class="floatBarsG"></div>
+            <div id="floatBarsG_8" class="floatBarsG"></div>
+        </div>
+        <script src="dist/bundle.js"></script>
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", function(event) {                
+                var element = document.getElementById("floatBarsG");
+                element.parentNode.removeChild(element);                
+            });
+        </script>
+    </body>
+</html>

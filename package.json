@@ -1,0 +1,28 @@
+{
+  "name": "search_box",
+  "version": "1.0.0",
+  "description": "quick logix search box",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",    
+    "bundle_watch": "watchify --entry app/app.module.js --outfile dist/bundle.js",
+    "minify": "uglifyjs --compress --mangle --source-map dist/bundle.min.map dist/bundle.js --output dist/bundle.min.js",
+    "build_prod": "npm run bundle && npm run minify",
+    "build_dev": "concurrently \"npm run bundle_watch\" \"lite-server\" "
+  },
+  "author": "Vinit Tiwari",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.11",
+    "angular-animate": "^1.5.11",
+    "angular-aria": "^1.5.11",
+    "angular-material": "^1.1.3",
+    "angular-ui-router": "^0.4.2"
+  },
+  "devDependencies": {
+    "browserify": "^14.3.0",
+    "concurrently": "^3.4.0",
+    "lite-server": "^2.3.0",
+    "watchify": "^3.9.0"
+  }
+}
